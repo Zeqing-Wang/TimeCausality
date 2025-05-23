@@ -92,7 +92,8 @@ Data examples and generation pipeline are shown in the paper and appendix.
 ## 💾 Coming Soon
 
 - ~~Release the Dataset~~
-- Evaluation scripts for open-source VLMs
+- ~~Evaluation scripts for open-source VLMs~~
+- Instruction for evaluation
 
 ## 📊 Full Benchmark Results on TimeCausality
 
