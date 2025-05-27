@@ -89,11 +89,36 @@ We assess models across **three key reasoning dimensions**:
 
 Data examples and generation pipeline are shown in the paper and appendix.
 
+## 🧭Instruction for evaluation
+
+### Step 1 Deploy your model
+In our provided official script, we use deploy package (like [LM Deploy](https://github.com/InternLM/lmdeploy) or [VLLM](https://github.com/vllm-project/vllm/)) to server an openai-like api.
+
+For example, the LM Deploy start with:
+```
+CUDA_VISIBLE_DEVICES=0 lmdeploy serve api_server \"${model_path}\" --backend turbomind --server-port $vlm_port
+```
+
+
+### Step 2 Download our TimeCasusality and Prepare the data format
+Download the images with the corresponding annoataion file in [Data (Google Drive)](https://drive.google.com/drive/folders/1B-27lPEA8QSWH1Ta8OkZSXfkJCZCi051?usp=sharing)
+
+All the images concat with the 'Modified Image' & 'Original Image'
+
+### Step 2.5 Deploy the LLM Judger
+In a similar method, you need to provide an api for revoking the LLM (we use Llama3 8B in the current leaderboard).
+
+### Step 3 Invoke the deployed api servers
+Benchmarking the VLM via the deployed api.
+
+
+⚠️ [Note] You may need to refer the 'args_infer_and_eval_gpt4o.sh' for a better understanding.
+
 ## 💾 Coming Soon
 
 - ~~Release the Dataset~~
 - ~~Evaluation scripts for open-source VLMs~~
-- Instruction for evaluation
+- ~~Instruction for evaluation~~
 
 ## 📊 Full Benchmark Results on TimeCausality
 
